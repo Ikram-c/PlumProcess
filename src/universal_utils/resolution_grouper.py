@@ -1,13 +1,16 @@
+
+
+import sys
 import shutil
 from pathlib import Path
 from PIL import Image
 
 
-class ImageResSorter:
-    def __init__(self, image_dir):
-        self.source_path = Path(image_dir)
+class ImageSorter:
+    def __init__(self, source_dir):
+        self.source_path = Path(source_dir)
         self.supported_extensions = {
-            '.jpg', '.jpeg', '.png', '.bmp', '.gif', '.tiff', '.webp'
+            '.jpg', '.jpeg', '.png', '.bmp', '.gif', '.tiff', '.tif', '.webp'
         }
         self._files = (
             f for f in self.source_path.iterdir()
@@ -32,11 +35,11 @@ class ImageResSorter:
         width, height = dimensions
         target_dir = self.source_path / f"{width}x{height}"
         target_dir.mkdir(exist_ok=True)
-        
+
         destination = target_dir / file_path.name
         if destination.exists():
             return False
-            
+
         shutil.move(str(file_path), str(destination))
         return True
 
@@ -51,9 +54,10 @@ class ImageResSorter:
             return
 
         results = [result for result in self]
-        print(f"Sorted {sum(results)} images.")
+        print(f"Sorted {sum(results)} images in {self.source_path}")
 
 
 if __name__ == "__main__":
-    sorter = ImageResSorter("image_dir")
+    target_path = sys.argv[1] if len(sys.argv) > 1 else "."
+    sorter = ImageSorter(target_path)
     sorter.sort()
