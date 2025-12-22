@@ -8,7 +8,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from bloom_filter import COCOAnnotationBloomFilter
-from mock_coco_data.mock_polygen import PolygonGenerator
+from src.mock_coco_data.mock_polygen import PolygonGenerator
 
 
 class CocoDatasetGenerator:

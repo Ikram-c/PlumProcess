@@ -2,7 +2,7 @@ import json
 import warnings
 from typing import Any, Dict, List, Optional, Set, Tuple
 
-from utils.coco_bloom_filter import COCOAnnotationBloomFilter
+from src.seg_splitter.seg_splitter_utils.coco_bloom_filter import COCOAnnotationBloomFilter
 
 
 class COCODatasetExtender:
