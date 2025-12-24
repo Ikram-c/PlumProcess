@@ -1,0 +1,12 @@
+
+# GJK Algorithm Configuration
+
+# Maximum iterations before terminating
+# Typical convergence: 3-6 iterations for well-behaved geometry
+# Higher values handle degenerate cases but increase worst-case runtime
+max_iterations: 20
+
+# Numerical precision threshold
+# Used for zero-length vector checks and distance comparisons
+# Default is single-precision float machine epsilon
+epsilon: 1.19209290e-07
