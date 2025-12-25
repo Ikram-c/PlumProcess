@@ -36,3 +36,11 @@ sticking to bbox for initial detection allows us to ignore several overlaps at d
     -> the reason we don't make the adjustments to the polygon "off the bat" is that we could have a bad human annotator, 
     -> this is why a connected component analyser is honestly the best trade off and it'll give us better polygons anyway
     
+
+
+---------------
+Nesterov accelerated distance measurement between non intersecting polygons is needed to get the relative distribution of segments in an image 
+    -> stat analysis
+    -> necessary for the train test splitter process
+
+    
