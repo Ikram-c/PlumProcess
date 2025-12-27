@@ -43,4 +43,6 @@ Nesterov accelerated distance measurement between non intersecting polygons is n
     -> stat analysis
     -> necessary for the train test splitter process
 
-    
+
+------------------------
+Intended Batching method -> group by image -> then run the set -> a many to many 
