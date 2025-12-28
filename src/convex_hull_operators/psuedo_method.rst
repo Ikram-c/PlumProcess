@@ -46,3 +46,28 @@ Nesterov accelerated distance measurement between non intersecting polygons is n
 
 ------------------------
 Intended Batching method -> group by image -> then run the set -> a many to many 
+
+
+
+---------------------------
+Technically -> don't need to load each image -> we can just work with coordinates and load problematic images 
+
+
+
+What about chromatic abberations and lens corrections?
+    -> take a random sample -> higher the sample -> more issues we'll pick up
+    -> determine the problems with them i.e.
+        -> lens distortion -> fix with lensfunpy
+            run opencv findHomography 
+            -> annotation transformer -> compare original to new 
+            -> record the transformation for distortion
+            -> could enhance it with an auto encoder down the line
+
+        -> chromatic abberation -> fix with parallel opencv
+
+
+
+---------------------
+Thumbnail generation
+-> parallel open cv
+-> reference: https://stackoverflow.com/questions/8631076/what-is-the-fastest-way-to-generate-image-thumbnails-in-python
