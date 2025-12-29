@@ -71,3 +71,16 @@ What about chromatic abberations and lens corrections?
 Thumbnail generation
 -> parallel open cv
 -> reference: https://stackoverflow.com/questions/8631076/what-is-the-fastest-way-to-generate-image-thumbnails-in-python
+
+
+---------------------
+Only load required regions of an image for the problematic images section
+
+----------------------
+Optical flow modules
+-> https://github.com/groussea/opyflow
+-> opencv optical flow
+
+
+From image dataset need to assess whether we have a fixed camera e.g. cctv
+                                                or if we have a moving camera e.g. a drone
