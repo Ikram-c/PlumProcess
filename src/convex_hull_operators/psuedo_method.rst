@@ -84,3 +84,20 @@ Optical flow modules
 
 From image dataset need to assess whether we have a fixed camera e.g. cctv
                                                 or if we have a moving camera e.g. a drone
+
+
+--------------------------------------------------------------------
+# Forgotten edge case:
+# all points of one/many polygons are within another 
+    -> think bowl of eggs -> bowl is annotated
+                          -> eggs are annotated
+
+    -> in this situation -> we will need to check for the levels of annotations 
+
+
+
+    -----------------------------------------------------------------------------------------------------------------
+
+
+
+    
