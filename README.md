@@ -1,8 +1,11 @@
 # PlumProcess
-Aim: "Foundational" base image processing scripts for Petabyte datasets
+A collection of image processing scripts with the target of automating image analysis for Petabyte sized datasets
 
-Assuming COCO format -> Add pycocotools to convert to our new format
+Repo Sub Aim: Stitching for small images and splitting for large images
 
+The repo Contains several collision detection algorithms and annotation quality checkers
+
+Designed to be as flexible as possible, allowing scripts to be integrated across several vision projects, speeding up development time and working as boilerplate code for computer vision applications
 
 datasets used for testing:
 instance segmentation: 
