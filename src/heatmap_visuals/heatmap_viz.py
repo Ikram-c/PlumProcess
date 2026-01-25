@@ -8,6 +8,7 @@ from src.heatmap_visuals.heatmap_models import BoundingBox
 from src.heatmap_visuals.heatmap_config_loader import Config
 from src.heatmap_visuals.heatmap_processors import HeatmapData
 
+
 class BoxShapeFactory:
     def __init__(self, config: Config):
         self._config = config
@@ -26,6 +27,7 @@ class BoxShapeFactory:
             "layer": "above",
             "name": f"Box {index + 1}",
         }
+
 
 class MenuBuilder:
     def __init__(self, config: Config, heatmap_data: HeatmapData, box_shapes: List[dict]):
@@ -120,6 +122,7 @@ class MenuBuilder:
         yield self._visibility_menu()
         yield self._smoothing_menu()
 
+
 class BoundingBoxHeatmapVisualiser:
     def __init__(self, config_path: Path):
         self._config = Config(config_path)
@@ -176,20 +179,25 @@ class BoundingBoxHeatmapVisualiser:
 
     def _apply_layout(self, box_shapes: List[dict], menus: List[dict]) -> None:
         canvas = self._config["canvas"]
+        figure = self._config["figure"]
         layout = self._config["layout"]
         vis = self._config["visualisation"]
         self._figure.update_layout(
             shapes=box_shapes,
             title=layout["title"],
-            xaxis={"title": layout["x_axis_title"], "range": [0, canvas["width"]], "constrain": "domain"},
+            xaxis={
+                "title": layout["x_axis_title"],
+                "range": [0, canvas["width"]],
+                "constrain": "domain",
+            },
             yaxis={
                 "title": layout["y_axis_title"],
                 "range": [0, canvas["height"]],
                 "scaleanchor": "x",
-                "scaleratio": canvas["height"] / canvas["width"],
+                "scaleratio": 1,
             },
-            width=canvas["width"],
-            height=canvas["height"],
+            width=figure["width"],
+            height=figure["height"],
             template=vis["template"],
             showlegend=True,
             updatemenus=menus,
@@ -219,5 +227,9 @@ class BoundingBoxHeatmapVisualiser:
         self._figure.write_html(str(path))
 
     def save_image(self, path: Path) -> None:
-        canvas = self._config["canvas"]
-        self._figure.write_image(str(path), width=canvas["width"], height=canvas["height"])
+        figure = self._config["figure"]
+        self._figure.write_image(
+            str(path),
+            width=figure["width"],
+            height=figure["height"],
+        )
