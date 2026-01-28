@@ -1,5 +1,5 @@
 # PlumProcess
-<img width="1132/4" height="1132/4" alt="Doodle - page 7" src="https://github.com/user-attachments/assets/6c67b243-3d0e-487c-bae2-0d561f3ad5ef" />
+<img width="283" height="283" alt="Doodle - page 7" src="https://github.com/user-attachments/assets/6c67b243-3d0e-487c-bae2-0d561f3ad5ef" />
 
 A collection of image processing scripts with the target of automating image analysis for Petabyte sized datasets
 
